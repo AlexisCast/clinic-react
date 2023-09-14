@@ -1,15 +1,17 @@
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import { Drawer, ButtonT } from '@castalexis/ac-components';
 
 import styles from './MainHeader.module.css';
+import LinkDropdown from './LinkDropdown';
 
 const MainHeader = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [showSubMenu, setShowSubMenu] = useState(false);
+  // const [showSubMenu, setShowSubMenu] = useState(false);
 
-  const toggleSubMenu = () => {
-    setShowSubMenu(!showSubMenu);
-  };
+  // const toggleSubMenu = () => {
+  //   setShowSubMenu(!showSubMenu);
+  // };
 
   const toggleDrawer = () => {
     setIsOpen(!isOpen);
@@ -18,6 +20,30 @@ const MainHeader = () => {
 
   return (
     <header>
+      <Drawer isOpen={isOpen} onClose={toggleDrawer}>
+        <h1>Drawer Header</h1>
+        <div>
+          <Link to="/" onClick={toggleDrawer}>
+            Home
+          </Link>
+          <Link to="/new-patients" onClick={toggleDrawer}>
+            New Patients
+          </Link>
+          <Link to="/services" onClick={toggleDrawer}>
+            Services
+          </Link>
+          <Link to="/products" onClick={toggleDrawer}>
+            Products
+          </Link>
+          <Link to="/contact" onClick={toggleDrawer}>
+            contact
+          </Link>
+          <div>crack</div>
+          <ButtonT onClick={toggleDrawer} variant="sm">
+            Close
+          </ButtonT>
+        </div>
+      </Drawer>
       <nav>
         <div className={styles.navItem}>
           <div className={styles.LogoContainerNav}>Your Logo Here</div>
@@ -32,30 +58,37 @@ const MainHeader = () => {
           <li>
             <Link to="/new-patients">New Patients</Link>
           </li>
+          <LinkDropdown label="Services">
+            <li>
+              <div>jiz1</div>
+            </li>
+            <li>
+              <div>baz2</div>
+            </li>
+            <li>
+              <div>bar3</div>
+            </li>
+            <li>
+              <div>foo4</div>
+            </li>
+          </LinkDropdown>
           <li>
             <Link to="/products">Products</Link>
           </li>
-          <li
-            onMouseEnter={toggleSubMenu}
-            onMouseLeave={toggleSubMenu}
-            className={`${styles.dropdown} ${showSubMenu ? styles.show : ''}`}>
-            <Link to="/services">Services</Link>
-            <span style={{ marginLeft: '5px' }}>-</span>
-            <ul className={`${styles['dropdown-content']} ${showSubMenu ? styles.show : ''}`}>
-              <li>
-                <div>jiz</div>
-              </li>
-              <li>
-                <div>baz</div>
-              </li>
-              <li>
-                <div>bar</div>
-              </li>
-              <li>
-                <div>foo</div>
-              </li>
-            </ul>
-          </li>
+          <LinkDropdown label="Contact" route="/contact">
+            <li>
+              <div>jiz</div>
+            </li>
+            <li>
+              <div>baz</div>
+            </li>
+            <li>
+              <div>bar</div>
+            </li>
+            <li>
+              <div>foo</div>
+            </li>
+          </LinkDropdown>
           <li>
             <Link to="/contact">Contact</Link>
           </li>

@@ -4,27 +4,57 @@ import Root from './components/Root';
 import { lorem10 } from './mockData/mockData';
 
 const Home = () => {
-  return <div>Home Content{lorem10}</div>;
+  return (
+    <div>
+      <h1>Home</h1>
+      <div>{lorem10}</div>
+    </div>
+  );
 };
 
 const NewPatients = () => {
-  return <div>NewPatients Content</div>;
+  return (
+    <div>
+      <h1>NewPatients Content</h1>
+      <div>{lorem10}</div>
+    </div>
+  );
 };
 
 const Products = () => {
-  return <div>Products Content</div>;
+  return (
+    <div>
+      <h1>Products Content</h1>
+      <div>{lorem10}</div>
+    </div>
+  );
 };
 
 const Services = () => {
-  return <div>Services Content</div>;
+  return (
+    <div>
+      <h1>Services Content</h1>
+      <div>{lorem10}</div>
+    </div>
+  );
 };
 
 const Reviews = () => {
-  return <div>Reviews Content</div>;
+  return (
+    <div>
+      <h1>Reviews Content</h1>
+      <div>{lorem10}</div>
+    </div>
+  );
 };
 
 const Contact = () => {
-  return <div>Contact Content</div>;
+  return (
+    <div>
+      <h1>Contact Content</h1>
+      <div>{lorem10}</div>
+    </div>
+  );
 };
 
 const router = createBrowserRouter([

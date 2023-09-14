@@ -44,21 +44,14 @@ li a{
 }
 
 a{
-    color: white;
+    color: black;
 }
 a:hover {
     color: #023047;
 }
 
-.dropdown-content {
+.HamburgerNav{
 	display: none;
-	position: absolute;
-	top: 100%;
-	left: 0;
-	/* background-color: #333; */
-	list-style-type: none;
-	padding: 0;
-	background-color: white ;
 }
 
 .show .dropdown-content {
@@ -67,36 +60,45 @@ a:hover {
 
 
   /* Media query for screens with a width of 640px or less */
-  @media (max-width: 640px) {
+@media (max-width: 640px) {
     .LogoContainerNav{
-      display: none;
-  }
-    .HamburgerNav{
-      display: block;
+        display: none;
     }
-  
-    .navItem li{
-      display: none;
-      }	
-  }
-  
-  @media (max-width: 768px) {
-      nav{
-          min-height: 48px;
-          /* background-color: blueviolet !important; */
-      }
+    .HamburgerNav{
+        display: block;
+    }
 
-      .LogoContainerNav{
-          display: none;
-      }
-      .HamburgerNav{
-          display: block;
-          cursor: pointer;
-      }
-      .HamburgerNav:hover {
-          background-color: lightblue; /* Change color on hover */
-      }
-      .navItem li{
-          display: none;
-      }	
-  }
+    .navItem li{
+        display: none;
+    }	
+}
+
+@media (max-width: 820px) {
+    nav{
+        min-height: 48px;
+        /* background-color: blueviolet !important; */
+    }
+
+    .LogoContainerNav{
+        display: none;
+    }
+
+    .HamburgerNav{
+        display: block;
+        cursor: pointer;
+    }
+
+    .HamburgerNav:hover {
+        background-color: lightblue; /* Change color on hover */
+    }
+
+    .navItem li{
+        display: none;
+    }	
+}
+
+@media (max-width: 960px) {
+    .LogoContainerNav{
+        display: none;
+    }
+}

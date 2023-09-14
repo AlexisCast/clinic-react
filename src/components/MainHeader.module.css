@@ -1,0 +1,102 @@
+header{
+    background-color: #219ebc;
+    color: #023047;
+}
+
+nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0px 24px;
+    min-height: 64px;
+}
+
+.navItem{
+    /* white-space: nowrap; */
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+.navItem li{
+	padding: 0px 20px;
+	position: relative;
+    align-items: center;
+    display: flex;
+    flex: 1;
+    height: 100%;
+    justify-content: center;
+    white-space: nowrap;
+}
+
+ul{
+    padding-inline-start: 0px;
+    margin: 0px;
+}
+
+li{
+    list-style-type: none;
+}
+
+li a{
+    text-decoration: none;
+}
+
+a{
+    color: white;
+}
+a:hover {
+    color: #023047;
+}
+
+.dropdown-content {
+	display: none;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	/* background-color: #333; */
+	list-style-type: none;
+	padding: 0;
+	background-color: white ;
+}
+
+.show .dropdown-content {
+	display: block;
+}
+
+
+  /* Media query for screens with a width of 640px or less */
+  @media (max-width: 640px) {
+    .LogoContainerNav{
+      display: none;
+  }
+    .HamburgerNav{
+      display: block;
+    }
+  
+    .navItem li{
+      display: none;
+      }	
+  }
+  
+  @media (max-width: 768px) {
+      nav{
+          min-height: 48px;
+          /* background-color: blueviolet !important; */
+      }
+
+      .LogoContainerNav{
+          display: none;
+      }
+      .HamburgerNav{
+          display: block;
+          cursor: pointer;
+      }
+      .HamburgerNav:hover {
+          background-color: lightblue; /* Change color on hover */
+      }
+      .navItem li{
+          display: none;
+      }	
+  }

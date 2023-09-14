@@ -1,9 +1,10 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 
 import Root from './components/Root';
+import { lorem10 } from './mockData/mockData';
 
 const Home = () => {
-  return <div>Home Content</div>;
+  return <div>Home Content{lorem10}</div>;
 };
 
 const NewPatients = () => {

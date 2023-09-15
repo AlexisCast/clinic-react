@@ -1,29 +1,60 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 
 import Root from './components/Root';
+import { lorem10 } from './mockData/mockData';
 
 const Home = () => {
-  return <div>Home Content</div>;
+  return (
+    <div>
+      <h1>Home</h1>
+      <div>{lorem10}</div>
+    </div>
+  );
 };
 
 const NewPatients = () => {
-  return <div>NewPatients Content</div>;
+  return (
+    <div>
+      <h1>NewPatients Content</h1>
+      <div>{lorem10}</div>
+    </div>
+  );
 };
 
 const Products = () => {
-  return <div>Products Content</div>;
+  return (
+    <div>
+      <h1>Products Content</h1>
+      <div>{lorem10}</div>
+    </div>
+  );
 };
 
 const Services = () => {
-  return <div>Services Content</div>;
+  return (
+    <div>
+      <h1>Services Content</h1>
+      <div>{lorem10}</div>
+    </div>
+  );
 };
 
-const Reviews = () => {
-  return <div>Reviews Content</div>;
+const Resources = () => {
+  return (
+    <div>
+      <h1>Resources Content</h1>
+      <div>{lorem10}</div>
+    </div>
+  );
 };
 
 const Contact = () => {
-  return <div>Contact Content</div>;
+  return (
+    <div>
+      <h1>Contact Content</h1>
+      <div>{lorem10}</div>
+    </div>
+  );
 };
 
 const router = createBrowserRouter([
@@ -42,7 +73,10 @@ const router = createBrowserRouter([
         path: 'services',
         element: <Services />
       },
-      { path: 'reviews', element: <Reviews /> },
+      {
+        path: 'resources',
+        element: <Resources />
+      },
       { path: 'contact', element: <Contact /> }
     ]
   }

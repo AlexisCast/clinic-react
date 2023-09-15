@@ -61,21 +61,39 @@ const router = createBrowserRouter([
   {
     path: '/',
     element: <Root />,
-    errorElement: <div>Error!</div>,
+    errorElement: <Root />,
     children: [
       { index: true, element: <Home /> },
       { path: 'new-patients', element: <NewPatients /> },
       {
         path: 'products',
-        element: <Products />
+        element: <Products />,
+        children: [
+          {
+            path: ':productId',
+            element: <Products />
+          }
+        ]
       },
       {
         path: 'services',
-        element: <Services />
+        element: <Services />,
+        children: [
+          {
+            path: ':serviceId',
+            element: <Services />
+          }
+        ]
       },
       {
         path: 'resources',
-        element: <Resources />
+        element: <Resources />,
+        children: [
+          {
+            path: ':resourceId',
+            element: <Resources />
+          }
+        ]
       },
       { path: 'contact', element: <Contact /> }
     ]

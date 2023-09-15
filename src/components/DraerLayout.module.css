@@ -1,0 +1,16 @@
+.Drawer__container{
+    padding: 16px;
+    display: flex; 
+    flex-direction: column;
+}
+
+.Drawer__nav{
+    display: flex; 
+    flex-direction: column;
+    border-top: 2px solid #DB504A;
+}
+
+.Drawer__nav__li{
+    border-bottom: 2px solid #4F6D7A;
+    padding: 5px 0px;
+}

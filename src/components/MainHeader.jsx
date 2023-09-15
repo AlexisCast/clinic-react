@@ -64,35 +64,47 @@ const MainHeader = () => {
           <li>
             <Link to="/new-patients">New Patients</Link>
           </li>
-          <LinkDropdown label="Services">
+
+          <LinkDropdown label="Products" route="/products">
             <li>
-              <div>jiz1</div>
+              <div>Products jiz</div>
             </li>
             <li>
-              <div>baz2</div>
+              <div>Products baz</div>
             </li>
             <li>
-              <div>bar3</div>
+              <div>Products bar</div>
             </li>
             <li>
-              <div>foo4</div>
+              <div>Products foo</div>
             </li>
           </LinkDropdown>
-          <li>
-            <Link to="/products">Products</Link>
-          </li>
-          <LinkDropdown label="Contact" route="/contact">
+          <LinkDropdown label="Services">
             <li>
-              <div>jiz</div>
+              <div>Services jiz1</div>
             </li>
             <li>
-              <div>baz</div>
+              <div>Services baz2</div>
             </li>
             <li>
-              <div>bar</div>
+              <div>Services bar3</div>
             </li>
             <li>
-              <div>foo</div>
+              <div>Services foo4</div>
+            </li>
+          </LinkDropdown>
+          <LinkDropdown label="Resources" route="/resources">
+            <li>
+              <div>Resources jiz</div>
+            </li>
+            <li>
+              <div>Resources baz</div>
+            </li>
+            <li>
+              <div>Resources bar</div>
+            </li>
+            <li>
+              <div>Resources foo</div>
             </li>
           </LinkDropdown>
           <li>

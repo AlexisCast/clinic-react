@@ -39,10 +39,10 @@ const Services = () => {
   );
 };
 
-const Reviews = () => {
+const Resources = () => {
   return (
     <div>
-      <h1>Reviews Content</h1>
+      <h1>Resources Content</h1>
       <div>{lorem10}</div>
     </div>
   );
@@ -73,7 +73,10 @@ const router = createBrowserRouter([
         path: 'services',
         element: <Services />
       },
-      { path: 'reviews', element: <Reviews /> },
+      {
+        path: 'resources',
+        element: <Resources />
+      },
       { path: 'contact', element: <Contact /> }
     ]
   }

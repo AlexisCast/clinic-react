@@ -1,12 +1,12 @@
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
-import { Drawer, ButtonT } from '@castalexis/ac-components';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 
 import styles from './MainHeader.module.css';
 import LinkDropdown from './LinkDropdown';
+import DrawerLayout from './DrawerLayout';
 
 const MainHeader = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,7 +23,7 @@ const MainHeader = () => {
 
   return (
     <header>
-      <Drawer isOpen={isOpen} onClose={toggleDrawer}>
+      {/* <Drawer isOpen={isOpen} onClose={toggleDrawer}>
         <h1>Drawer Header</h1>
         <div>
           <Link to="/" onClick={toggleDrawer}>
@@ -46,7 +46,8 @@ const MainHeader = () => {
             Close
           </ButtonT>
         </div>
-      </Drawer>
+      </Drawer> */}
+      {<DrawerLayout isOpen={isOpen} onClose={toggleDrawer} />}
       <nav>
         <div className={styles.navItem}>
           <div className={styles.LogoContainerNav}>Your Logo Here</div>
@@ -67,44 +68,44 @@ const MainHeader = () => {
 
           <LinkDropdown label="Products" route="/products">
             <li>
-              <div>Products jiz</div>
+              <Link to="/products/jiz">Products jiz</Link>
             </li>
             <li>
-              <div>Products baz</div>
+              <Link to="/products/baz">Products baz</Link>
             </li>
             <li>
-              <div>Products bar</div>
+              <Link to="/products/bar">Products bar</Link>
             </li>
             <li>
-              <div>Products foo</div>
+              <Link to="/products/foo">Products foo</Link>
             </li>
           </LinkDropdown>
-          <LinkDropdown label="Services">
+          <LinkDropdown label="Services" route="/services">
             <li>
-              <div>Services jiz1</div>
+              <Link to="/services/jiz">Products jiz</Link>
             </li>
             <li>
-              <div>Services baz2</div>
+              <Link to="/services/baz2">Products baz2</Link>
             </li>
             <li>
-              <div>Services bar3</div>
+              <Link to="/services/bar3">Products bar3</Link>
             </li>
             <li>
-              <div>Services foo4</div>
+              <Link to="/services/foo4">Products foo4</Link>
             </li>
           </LinkDropdown>
           <LinkDropdown label="Resources" route="/resources">
             <li>
-              <div>Resources jiz</div>
+              <Link to="/resources/jiz">Resources jiz</Link>
             </li>
             <li>
-              <div>Resources baz</div>
+              <Link to="/resources/baz">Resources baz</Link>
             </li>
             <li>
-              <div>Resources bar</div>
+              <Link to="/resources/bar">Resources bar</Link>
             </li>
             <li>
-              <div>Resources foo</div>
+              <Link to="/resources/foo">Resources foo</Link>
             </li>
           </LinkDropdown>
           <li>

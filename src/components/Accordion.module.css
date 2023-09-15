@@ -1,0 +1,23 @@
+.AccordionButton__conatainer{
+    display: flex;
+}
+
+.AccordionButton__button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.Accordion__content{
+    border-top: 2px solid #4F6D7A;
+}
+
+.AccordionItem{
+    padding-left: 20px;
+}
+
+.faCaretDown{
+    padding-right:5px;
+    
+}

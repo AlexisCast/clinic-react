@@ -2,6 +2,9 @@ import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { Drawer, ButtonT } from '@castalexis/ac-components';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
+
 import styles from './MainHeader.module.css';
 import LinkDropdown from './LinkDropdown';
 
@@ -47,9 +50,12 @@ const MainHeader = () => {
       <nav>
         <div className={styles.navItem}>
           <div className={styles.LogoContainerNav}>Your Logo Here</div>
-          <button className={styles.HamburgerNav} onClick={toggleDrawer}>
-            hamIcon
-          </button>
+          <FontAwesomeIcon
+            className={styles.HamburgerNav}
+            icon={faBars}
+            size="xl"
+            onClick={toggleDrawer}
+          />
         </div>
         <ul className={styles.navItem}>
           <li>

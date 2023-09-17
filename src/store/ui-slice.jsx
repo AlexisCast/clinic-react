@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  modalIsVisbile: false
+  drawerIsVisbile: false
 };
 
 export const uiSlice = createSlice({
@@ -9,7 +9,7 @@ export const uiSlice = createSlice({
   initialState,
   reducers: {
     toggle: (state) => {
-      state.modalIsVisbile = !state.modalIsVisbile;
+      state.drawerIsVisbile = !state.drawerIsVisbile;
     }
   }
 });

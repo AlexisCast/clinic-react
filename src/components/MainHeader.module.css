@@ -1,6 +1,8 @@
 header{
     background-color: #219ebc;
     color: #023047;
+    position: sticky;
+    top: 0;
 }
 
 nav{

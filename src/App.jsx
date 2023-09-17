@@ -1,59 +1,77 @@
-import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import { RouterProvider, createBrowserRouter, useParams } from 'react-router-dom';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 
 import Root from './components/Root';
 import { lorem10 } from './mockData/mockData';
+import PageContainer from './components/PageLayout';
+import { getProducts } from './store/products-thunks';
 
 const Home = () => {
   return (
-    <div>
+    <PageContainer>
       <h1>Home</h1>
       <div>{lorem10}</div>
-    </div>
+    </PageContainer>
   );
 };
 
 const NewPatients = () => {
   return (
-    <div>
+    <PageContainer>
       <h1>NewPatients Content</h1>
       <div>{lorem10}</div>
-    </div>
+    </PageContainer>
   );
 };
 
 const Products = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getProducts());
+  }, []);
+
+  let { productId } = useParams();
+
+  if (productId) {
+    console.log(productId);
+  } else {
+    console.log('No product ID');
+  }
+
   return (
-    <div>
-      <h1>Products Content</h1>
+    <PageContainer>
+      <h1>{`Products ${productId ? `${productId}` : 'All'}`}</h1>
       <div>{lorem10}</div>
-    </div>
+    </PageContainer>
   );
 };
 
 const Services = () => {
   return (
-    <div>
+    <PageContainer>
       <h1>Services Content</h1>
       <div>{lorem10}</div>
-    </div>
+    </PageContainer>
   );
 };
 
 const Resources = () => {
   return (
-    <div>
+    <PageContainer>
       <h1>Resources Content</h1>
       <div>{lorem10}</div>
-    </div>
+    </PageContainer>
   );
 };
 
 const Contact = () => {
   return (
-    <div>
+    <PageContainer>
       <h1>Contact Content</h1>
       <div>{lorem10}</div>
-    </div>
+    </PageContainer>
   );
 };
 

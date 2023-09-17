@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+
+import { toggle } from '../store/ui-slice';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
@@ -9,45 +11,15 @@ import LinkDropdown from './LinkDropdown';
 import DrawerLayout from './DrawerLayout';
 
 const MainHeader = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  // const [showSubMenu, setShowSubMenu] = useState(false);
-
-  // const toggleSubMenu = () => {
-  //   setShowSubMenu(!showSubMenu);
-  // };
+  const dispatch = useDispatch();
 
   const toggleDrawer = () => {
-    setIsOpen(!isOpen);
-    console.log(isOpen);
+    dispatch(toggle());
   };
 
   return (
     <header>
-      {/* <Drawer isOpen={isOpen} onClose={toggleDrawer}>
-        <h1>Drawer Header</h1>
-        <div>
-          <Link to="/" onClick={toggleDrawer}>
-            Home
-          </Link>
-          <Link to="/new-patients" onClick={toggleDrawer}>
-            New Patients
-          </Link>
-          <Link to="/services" onClick={toggleDrawer}>
-            Services
-          </Link>
-          <Link to="/products" onClick={toggleDrawer}>
-            Products
-          </Link>
-          <Link to="/contact" onClick={toggleDrawer}>
-            contact
-          </Link>
-          <div>crack</div>
-          <ButtonT onClick={toggleDrawer} variant="sm">
-            Close
-          </ButtonT>
-        </div>
-      </Drawer> */}
-      {<DrawerLayout isOpen={isOpen} onClose={toggleDrawer} />}
+      <DrawerLayout />
       <nav>
         <div className={styles.navItem}>
           <div className={styles.LogoContainerNav}>Your Logo Here</div>

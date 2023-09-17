@@ -1,4 +1,7 @@
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+
+import { toggle } from '../store/ui-slice';
 import { Link } from 'react-router-dom';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -7,6 +10,8 @@ import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
 import styles from './Accordion.module.css';
 
 export function Accordion({ title, children }) {
+  const dispatch = useDispatch();
+
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleAccordion = () => {
@@ -29,19 +34,17 @@ export function Accordion({ title, children }) {
 
       {isOpen && (
         <div className={styles.Accordion__content}>
-          <ul>{children}</ul>
+          <ul onClick={() => dispatch(toggle())}>{children}</ul>
         </div>
       )}
     </div>
   );
 }
 
-export const AccordionItem = ({ closeDrawer, route, label }) => {
+export const AccordionItem = ({ route, label }) => {
   return (
     <li className={styles.AccordionItem}>
-      <Link to={route} onClick={closeDrawer}>
-        - {label}
-      </Link>
+      <Link to={route}>- {label}</Link>
     </li>
   );
 };
